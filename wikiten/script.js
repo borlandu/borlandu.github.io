@@ -4,31 +4,24 @@ let counter = {
   current: 0,
   max: 10
 };
-
 let flag_blockSearch = false;
 
 $('.wikiForm').submit(() => {
   let query = $('.wikiInput').val();
-  query = query[randomIndex(query.split(' '))];
-  !flag_blockSearch ? wikiSearch(query) : alert('Ты дебил? видишь я ещё ищу!');
+  query = query[random(query.length)];
   $('.wikiInput').prop('disabled', true);
   $('.wikiInput').val('').blur();
-  // if(!flag_blockSearch) $('#ol').html('');
   if(!flag_blockSearch){
-    for(let i = 0; i < $('.ol li').length; i++){
+    wikiSearch(query);
+    for(let i = 0; i < $('.ol li').length; i++)
       $(`.ol #l${i} a`).attr({ 'href': '#', 'title': '' }).text('');
-    }
   }
   return false;
 });
 
 //Делать репос если такая статья уже есть
-//Обнулять список при новом поиске
 //почистить код, да да это можно полюбасу
 //Если страница содержит редирект, то не нужно её в список
-
-//Пропанол - ошибка
-//По запросу "accessdate" ничего не найдено. Новый запрос - "undefined"
 
 let wikiSearch = (query) => {
   if(query === '') return console.log('Пустой запрос');
@@ -48,7 +41,7 @@ let wikiSearch = (query) => {
       console.log(d);
 
       let len = d[1].length;
-      let index = randomIndex(d[1]);
+      let index = random(len);
       let title = d[1][index];
 
       if(len === 0){
@@ -56,7 +49,7 @@ let wikiSearch = (query) => {
         if(query.split('').includes('_'))
           query = removeElemFromArray(query, '_');
 
-        let newquery = query[randomIndex(query)];
+        let newquery = query[random(query.length)] || Math.random().toString(36).substr(-1);
 
         counter.current--;
         wikiSearch(newquery);
@@ -88,12 +81,13 @@ let wikiContent = (query) => {
       let pid = Object.keys(d.query.pages)[0];
       let content = page[pid].revisions[0]['*'];
 
+      //Namestovo -- для проверки на редирект
       if(content.includes('#REDIRECT')) return wikiSearch(content.slice(12,-2));
       if(content.includes('#перенаправление')) return wikiSearch(content.slice(19,-2));
 
       let wordRegex = /\b\w{4,}\b/g;// Слова длиннее 4 букв
       let words = content.match(wordRegex);
-      let word = words[randomIndex(words)];
+      let word = words[random(words.length)] || Math.random().toString(36).substr(-1);
       //console.log(words);
       //console.log('[wikiContent]: ', word);
       wikiSearch(word);
@@ -103,76 +97,13 @@ let wikiContent = (query) => {
 
 
 
-
-let randomIndex = query => {
-  let q = typeof query !== 'object' ? query.toString() : query;
-  return Math.floor(q.length * Math.random());
+let random = x => {
+  return Math.floor(x * Math.random());
 };
-
 let removeElemFromArray = (array, value) => {
-  //Удаляет элемент и если массив окажется пустым возвращает случайный символ англ или цифру
   array = Array.from(array);
   for(let i = 0; i < array.length; i++)
     if(array[i] === value)
       array.splice(i, 1);
-  return array.length ? array : Math.random().toString(36).substr(-1);
+  return array;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-//
-//
-//
-//
-// let fixStr = str => {
-//   let entityMap = {
-//     '↵': ''
-//   };
-//   return String(str).replace(/[^А-Яа-яёЁA-Za-z0-9]/g, s => {
-//     return entityMap[s];
-//   });
-// };
-//
-//
-// //
-// //
-// //
-// //
-// // function bb(str){
-// //   let origin = str.split('==').slice(0, find(str.split('=='), 'Ссылки ') - 1).join(' ').split(' ');
-// //   let result = [];
-// //   for(let i = 0; i < origin.length; i++){
-// //     if(origin[i] !== '') result.push(origin[i]);
-// //   }
-// //   return result.join(' ');
-// // }
-// //
-// //
-// //
-//
-
-// // let find = (array, value) => {
-// //   if(array.indexOf){ // если метод существует
-// //     return array.indexOf(value);
-// //   }
-// //
-// //   for(let i = 0; i < array.length; i++){
-// //     if(array[i] === value) return i;
-// //   }
-// //   return -1;
-// // }
