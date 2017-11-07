@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор «MCEXP»</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
+    <link rel="stylesheet" href="https://use.fontawesome.com/7a1f53c2e9.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/mcexp.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="nav-item" href="/">Главная</a>
+    </nav>
+
+    <section class="header">
+      <div class="container">
+        <h4 class="section-name">Мини-проект: калькулятор опыта</h4>
+        <h1 class="section-title">«MCEXP»</h1>
+        <p class="section-description">Тот самый добытый <span>Ёжиками</span> калькулятор опыта. Когда-нибудь я поведаю вам эту историю, но не сейчас. 😋</p>
+        <p class="section-description">Формулы действительны для версий 1.8+.<br>
+          Информация взята с <a href="http://minecraft.gamepedia.com/Experience" class="link" target="_blank">minecraft wiki</a>.</p>
+      </div>
+    </section>
+
+    <section class="calc">
+      <div class="container">
+        <h4 class="section-name">Количество опыта на уровне</h4>
+        <div class="w-container">
+          <div class="w-container__body">
+            <input id="js-currentLevel" type="number" min="0" max="2147483647" oninput="printTotalExp()" placeholder="Current Level">
+            <span id="js-totalExp" class="js-result">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h4 class="section-name">Количество опыта с - до уровня</h4>
+        <div class="w-container">
+          <div class="w-container__body">
+            <input id="js-fromLevel" type="number" min="0" max="2147483647" oninput="printFromToExp()" placeholder="From Level">
+            <input id="js-toLevel" type="number" min="0" max="2147483647" oninput="printFromToExp()" placeholder="To Level">
+            <span id="js-requiredExp" class="js-result">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="footer">
+      <div class="container">
+        <h4 class="section-name">Контакты</h4>
+        <h1 class="section-title">GLHF</h1>
+        <p class="section-description">С вами на "серьёзных" щах был Борланд и бесподобная команда <span>Ёжиков</span>.</p>
+        <ul>
+          <li><a href="https://vk.com/borlandu"><i class="fa fa-vk"></i></a></li>
+          <li><a href="https://twitter.com/borland_u"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://youtube.com/c/d37"><i class="fa fa-youtube-play"></i></a></li>
+        </ul>
+        <p class="section-description">v.1 u.1 © 2017</p>
+      </div>
+    </section>
+    <script type="text/javascript">
+      let getTotalExp = currentLevel => currentLevel >= 0 && currentLevel < 16 ? Math.pow(currentLevel,2)+6*currentLevel :
+        currentLevel >= 16 && currentLevel < 32 ? 2.5*Math.pow(currentLevel,2)-40.5*currentLevel+360 :
+        currentLevel >= 32 ? 4.5*Math.pow(currentLevel,2)-162.5*currentLevel+2220 : 0;
+
+      let getFromToExp = (fromLevel, toLevel) => getTotalExp(toLevel) - getTotalExp(fromLevel);
+
+      function printTotalExp(){
+        document.getElementById('js-totalExp').innerHTML = getTotalExp(document.getElementById('js-currentLevel').value);
+      }
+      function printFromToExp(){
+        document.getElementById('js-requiredExp').innerHTML = getFromToExp(document.getElementById('js-fromLevel').value, document.getElementById('js-toLevel').value)
+      }
+    </script>
+  </body>
+</html>
