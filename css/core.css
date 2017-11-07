@@ -48,7 +48,7 @@ body{
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px 0;
   padding-right: .5rem;
   padding-left: .5rem;
   margin-right: 10px;
@@ -257,6 +257,7 @@ section:nth-child(2n) .button{color: #272727;}
   .project-1 .button:active::after{content: '';}
 }
 @media screen and (max-width: 768px){
+  .nav .nav-item{font-size: .55em;}
   section.tools{grid-auto-flow: row; grid-template-rows: auto 1fr 1fr;}
   section.tools > .section-name{grid-column: span 1;}
   section.tools > .section-container{grid-row: span 1;}
