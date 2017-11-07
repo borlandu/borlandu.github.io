@@ -22,7 +22,9 @@ body{
   display: grid;
   grid-auto-flow: row;
   grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
 }
+
 
 .nav{
   position: fixed;
@@ -57,49 +59,109 @@ body{
   background-color: #525252;
 }
 
+
 section{
   background-color: #2b2b2b;
   display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    justify-items: center;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  height: 600px;
+  padding: 0 40px;
 }
 section:nth-child(2n){background-color: #272727;}
-section.header, section:last-of-type{background-color: #202020;}
+section:first-of-type, section:last-of-type{background-color: #202020;}
+section:first-of-type{
+  /*margin-top: 54px;*/
+  height: 900px;
+}
 
 
-section> .container{
-  width: 600px;
+.section-name{
+  width: 100%;
+  max-width: 600px;
+  grid-row: 1;
+  grid-column: span 1;
   text-align: center;
-  align-items: start;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.section-container{
+  grid-row: 2;
 
+  text-align: center;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  padding: 40px 0;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 600px;
 }
 
 
-.header > .container{
-  height: 900px;
-}
-.tools > .container{
-  text-align: left;
-  align-items: start;
-  height: auto;
-}
 
-.footer ul{
+section.tools{height: 700px;}
+section.tools > .section-name{grid-column: span 2;}
+section.tools > .section-container{text-align: left; align-items: start;}
+
+
+
+
+
+h1{
+  color: #fff;
+  font-size: 3.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+h3{
+  color: #D8D8D8;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+h4{
+  color: #525252;
+  font-size: 0.7em;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+p{
+  size: 0.8em;
+  color: #8D8D8D;
+  letter-spacing: 0.7px;
+  line-height: 28px;
+  font-weight: 300;
+  margin-bottom: .5rem;
+}
+p:last-of-type{margin-bottom: 0;}
+p span{
+  font-weight: bold;
+  color: #fff;
+}
+ul{list-style: none;}
+ul li{margin-bottom: .5rem;}
+ul li:last-child{margin-bottom: 0;}
+ul a{
+  text-decoration: none;
+  color: #8D8D8D;
+}
+ul a:hover{color: #fff;}
+
+
+.ul-icon{
   margin-top: 30px;
   display: flex;
   flex-flow: row nowrap;
 }
-.footer ul li{margin-right: 10px;}
-.footer ul li:last-of-type{margin-right: 0;}
-.footer ul a{
+.ul-icon li{margin-right: 10px;}
+.ul-icon li:last-of-type{margin-right: 0;}
+.ul-icon a{
   display: block;
   width: 48px;
   height: 48px;
@@ -108,55 +170,9 @@ section> .container{
   font-size: 1.5rem;
 }
 
-/*FORMAT*/
-.link{
-  color: #8D8D8D;
-  border-bottom: 1px dashed #8D8D8D;
-}
-.link:hover{
-  color: #fff;
-  border-bottom: 1px dashed #fff;
-}
-
-.section-name{
-  color: #525252;
-  font-size: 0.7em;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: .5rem;
-}
-.section-title{
-  color: #fff;
-  font-size: 3.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 25px;
-}
-.section-subtitle{
-  color: #D8D8D8;
-  font-size: 1.1em;
-  letter-spacing: 0.5px;
-  font-weight: normal;
-  margin-bottom: 25px;
-}
-.section-description{
-  size: 0.8em;
-  color: #8D8D8D;
-  letter-spacing: 0.7px;
-  line-height: 28px;
-  font-weight: 300;
-  margin-bottom: .5rem;
-}
-.section-description:last-of-type{margin-bottom: 0;}
-.section-description span{
-  font-weight: bold;
-  color: #fff;
-}
-
-.section-button{
+.button{
   background-color: #ffda3e;
-  color: #282828;
+  color: #2b2b2b;
   font-size: 0.7em;
   letter-spacing: 2px;
   font-weight: 400;
@@ -171,15 +187,13 @@ section> .container{
   user-select: none;
   border: none;
 }
-.section-button:hover{
+.button:hover{
   background-color: #cfbb6e;
 }
-.section-button:active{
+.button:active{
   background-color: #8d8d8d;
 }
-
-
-.section-button:hover::after{
+.button:hover::after{
   content: '';
   display: block;
   position: absolute;
@@ -190,7 +204,7 @@ section> .container{
   top: .5rem;
   color: #8d8d8d;
 }
-.section-button:active::after{
+.button:active::after{
   content: '';
   display: block;
   position: absolute;
@@ -201,23 +215,49 @@ section> .container{
   top: .5rem;
   color: #8d8d8d;
 }
-.project-1 .section-button:hover::after{content: 'Хочешь нажать? Хорошо, только аккуратнее.';}
-.project-1 .section-button:active::after{content: 'Ну вот, теперь кнопка серая.';}
 
-ul{
-  list-style: none;
-}
-ul li{margin-bottom: .5rem;}
-ul li:last-child{margin-bottom: 0;}
-ul a{
-  text-decoration: none;
+section:nth-child(2n) .button{color: #272727;}
+
+.project-1 .button:hover::after{content: 'Хочешь нажать? Хорошо, только аккуратнее.';}
+.project-1 .button:active::after{content: 'Ну вот, теперь я серая.';}
+
+/*.project-2 .button:hover::after{content: 'Попробуем ещё разок?';}
+.project-2 .button:active::after{content: 'Да ты наверное издеваешься!';}
+
+.project-3 .button:hover::after{content: 'Снова ты?';}
+.project-3 .button:active::after{content: 'Ой, всё! Я обиделась! 😤';}*/
+
+.link{
   color: #8D8D8D;
+  border-bottom: 1px dashed #8D8D8D;
 }
-ul a:hover{
+.link:hover{
   color: #fff;
+  border-bottom: 1px dashed #fff;
+}
+
+
+
+/*SCROLL*/
+*::-webkit-scrollbar-track{
+	background-color: transparent;
+}
+*::-webkit-scrollbar{
+	width: 5px;
+  height: 5px;
+	background-color: #202020;
+}
+*::-webkit-scrollbar-thumb{
+	background-color: rgba(255, 255, 255, .5);
+}
+/*MEDIA*/
+@media screen and (max-width: 360px){
+  section{height: auto;}
+  .project-1 .button:hover::after{content: '';}
+  .project-1 .button:active::after{content: '';}
 }
 @media screen and (max-width: 768px){
-  section{
-    grid-auto-flow: row;
-  }
+  section.tools{grid-auto-flow: row; grid-template-rows: auto 1fr 1fr;}
+  section.tools > .section-name{grid-column: span 1;}
+  section.tools > .section-container{grid-row: span 1;}
 }

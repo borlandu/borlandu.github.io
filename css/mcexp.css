@@ -77,3 +77,11 @@ input[type="number"] {
   color: #8D8D8D;
   font-size: small;
 }
+
+
+
+@media screen and (max-width: 768px){
+  section.tools{grid-auto-flow: row; grid-template-rows: 1fr 1fr;}
+  section.tools > .section-name{grid-column: span 1;}
+  section.tools > .section-container{grid-row: span 1;}
+}
