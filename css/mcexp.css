@@ -1,9 +1,9 @@
-section.calc > .container{
+/* section.calc > .container{
   text-align: left;
   align-items: start;
   height: 600;
 }
-
+ */
 
 
 
@@ -21,8 +21,6 @@ input[type="number"] {
 
 .w-container{
   width: 450px;
-}
-.w-container:last-of-type{
 }
 .w-container__header{
   margin-bottom: 5px;
@@ -79,9 +77,11 @@ input[type="number"] {
 }
 
 
+@media screen and (max-width: 640px){
+  .w-container{width: 100%;}
+  .w-container__body{flex-flow: column;}
 
-@media screen and (max-width: 768px){
-  section.tools{grid-auto-flow: row; grid-template-rows: 1fr 1fr;}
-  section.tools > .section-name{grid-column: span 1;}
-  section.tools > .section-container{grid-row: span 1;}
+  .w-container__body input#js-currentLevel,
+  .w-container__body input#js-fromLevel, .w-container__body input#js-toLevel,
+  .w-container__body span.js-result{width: 100%;}
 }

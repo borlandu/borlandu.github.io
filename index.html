@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="BLab">
+    <meta name="apple-mobile-web-app-title" content="BLab">
+    <meta name="msapplication-starturl" content="/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Borland Laboratory</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" href="css/mcexp.css">
+    <link rel="stylesheet" href="css/_nav.css">
+    <link rel="stylesheet" href="css/_section.css">
+
   </head>
   <body>
     <nav class="nav">
-      <a class="nav-item" href="/#">Главная</a>
-      <a class="nav-item" href="/#about">О нас</a>
-      <a class="nav-item" href="/#projects">Проекты</a>
-      <!-- <a class="nav-item" href="/#tools">Шалости</a> -->
-      <a class="nav-item" href="/#contact">Контакты</a>
+      <a class="nav-item" href="#">Главная</a>
+      <a class="nav-item" href="#about">О нас</a>
+      <a class="nav-item" href="#projects">Проекты</a>
+      <a class="nav-item" href="#contact">Контакты</a>
+      <span class="nav-menu"></span>
     </nav>
 
     <section class="header">
@@ -56,46 +66,17 @@
       </div>
     </section>
 
-    <!-- <section id="tools" class="tools">
-      <div class="section-name">
-        <h4>Мини-проекты</h4>
-        <h1>То-сё</h1>
-        <h3>Пятое-десятое</h3>
-        <p>Хочешь узнать как долго лупить криперов для получения 1337го уровня? Не вопрос, <span>Ёжики</span> где-то раздобыли калькулятор опыта для майнача.</p>
-        <p>Чо чо чо? Майнач? ВТФ? Они странные ребята. ¯\_(ツ)_/¯</p>
-      </div>
-      <div class="section-container">
-        <h4>Количество опыта на уровне</h4>
-        <div class="w-container">
-          <div class="w-container__body">
-            <input id="js-currentLevel" type="number" min="0" max="2147483647" oninput="printTotalExp()" placeholder="Current Level">
-            <span id="js-totalExp" class="js-result">0</span>
-          </div>
-        </div>
-      </div>
-      <div class="section-container">
-        <h4>Количество опыта с - до уровня</h4>
-        <div class="w-container">
-          <div class="w-container__body">
-            <input id="js-fromLevel" type="number" min="0" max="2147483647" oninput="printFromToExp()" placeholder="From Level">
-            <input id="js-toLevel" type="number" min="0" max="2147483647" oninput="printFromToExp()" placeholder="To Level">
-            <span id="js-requiredExp" class="js-result">0</span>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <section id="contact" class="footer">
       <div class="section-name"><h4>Контакты</h4></div>
       <div class="section-container">
         <h1>GLHF</h1>
         <p>С вами на "серьёзных" щах был Борланд и бесподобная команда <span>Ёжиков</span>.</p>
         <ul class="ul-icon">
-          <li><a href="https://vk.com/borlandu"><i class="fa fa-vk"></i></a></li>
-          <li><a href="https://twitter.com/borland_u"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="https://youtube.com/c/d37"><i class="fa fa-youtube-play"></i></a></li>
+          <li><a href="https://vk.com/borlandu" aria-label="vk.com"><i class="fa fa-vk"></i></a></li>
+          <li><a href="https://twitter.com/borland_u" aria-label="twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://youtube.com/c/d37" aria-label="youtube"><i class="fa fa-youtube-play"></i></a></li>
         </ul>
-        <p>v.1 u.2 © 2017</p>
+        <p class="copyright">v.1 u.3 © 2017</p>
       </div>
     </section>
 
