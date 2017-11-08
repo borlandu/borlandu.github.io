@@ -47,4 +47,4 @@ section.header{height: 900px;}
 @media screen and (max-width: 1024px){
   section.project-1 .button:hover::after{display: none;}
   section.project-1 .button:active::after{display: none;}
-}  
+}
