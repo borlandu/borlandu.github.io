@@ -52,6 +52,6 @@
   .nav .nav-item:first-of-type{display: block;}
   .nav.nav-show .nav-item{display: block;}
   .nav .nav-menu{display: block;}
-  .nav .nav-menu::after{content: '+'}
-  .nav.nav-show .nav-menu::after{content: '-'}
+  .nav .nav-menu::after{content: '-'}
+  .nav.nav-show .nav-menu::after{content: '×'}
 }

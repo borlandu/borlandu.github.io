@@ -164,6 +164,9 @@ section:nth-child(2n) .button{color: #272727;}
   height: 5px;
 	background-color: #202020;
 }
+*::-webkit-scrollbar-corner{
+  background-color: #202020;
+}
 *::-webkit-scrollbar-thumb{
 	background-color: rgba(255, 255, 255, .5);
 }
