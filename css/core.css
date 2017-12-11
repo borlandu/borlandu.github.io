@@ -63,7 +63,7 @@ p span{
   font-weight: bold;
   color: #fff;
 }
-ul{list-style: none;}
+/* ul{list-style: none;}
 ul li{margin-bottom: .5rem;}
 ul li:last-child{margin-bottom: 0;}
 ul a{
@@ -87,7 +87,7 @@ ul a:hover{color: #fff;}
   line-height: 48px;
   text-align: center;
   font-size: 1.5rem;
-}
+} */
 
 .button{
   display: block;

@@ -1,0 +1,26 @@
+.footer .icon-nav{
+  list-style: none;
+  margin-top: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.footer .icon-nav li{
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+
+  margin-right: 10px;
+  margin-bottom: .5rem;
+}
+.footer .icon-nav li:last-of-type{margin-right: 0;}
+.footer .icon-nav a{
+  text-decoration: none;
+  color: #8d8d8d;
+  display: block;
+}
+.footer .icon-nav a:hover{color: #fff;}
+.footer .icon-nav svg{
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
