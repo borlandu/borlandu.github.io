@@ -11,12 +11,21 @@ html, body{
   width: 100%;
 }
 
+:root{
+  --color-accent: #ffcc33;
+}
+
+
+
+
+
+
 body{
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
-  color: #fff;
+  color: hsla(0, 0%, 100%, 0.87);
   background-color: #202020;
 
   display: grid;
@@ -92,7 +101,7 @@ ul a:hover{color: #fff;}
 .button{
   display: block;
   position: relative;
-  background-color: #ffda3e;
+  background-color: var(--color-accent);
   color: #2b2b2b;
   font-size: 0.75em;
   letter-spacing: 2px;
@@ -104,13 +113,13 @@ ul a:hover{color: #fff;}
   user-select: none;
   border: none;
 }
-.button:hover{
+/* .button:hover{
   background-color: #cfbb6e;
-}
-.button:active{
+} */
+.button:hover{
   background-color: #8d8d8d;
 }
-.button:hover::after{
+/* .button:hover::after{
   content: '';
   display: block;
   position: absolute;
@@ -131,12 +140,12 @@ ul a:hover{color: #fff;}
   left: calc(100% + 15px);
   top: 0;
   color: #8d8d8d;
-}
+} */
 
 section:nth-child(2n) .button{color: #272727;}
 
-.project-1 .button:hover::after{content: 'Хочешь нажать? Хорошо, только аккуратнее.';}
-.project-1 .button:active::after{content: 'Ну вот, теперь я серая.';}
+/* .project-1 .button:hover::after{content: 'Хочешь нажать? Хорошо, только аккуратнее.';}
+.project-1 .button:active::after{content: 'Ну вот, теперь я серая.';} */
 
 /*.project-2 .button:hover::after{content: 'Попробуем ещё разок?';}
 .project-2 .button:active::after{content: 'Да ты наверное издеваешься!';}

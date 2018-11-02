@@ -14,7 +14,7 @@ section:first-of-type, section:last-of-type{
   background-color: #202020;
 }
 
-section.header{height: 900px;}
+section.section-header{height: 900px;}
 
 .section-name{
   margin-bottom: 20px;
@@ -36,7 +36,7 @@ section.header{height: 900px;}
 
 @media screen and (max-width: 640px){
   section{padding: 20px; height: max-content; flex-flow: column;}
-  section.header{height: 450px;}
+  section.section-header{height: 450px;}
 
   .section-name{margin-bottom: 10px;}
   .section-container{margin-bottom: 20px;}

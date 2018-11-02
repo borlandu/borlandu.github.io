@@ -1,8 +1,5 @@
 /*NAV SHOW-HIDE*/
-document.querySelector('.nav-menu').onclick = _ => {
-  let nav = document.querySelector('.nav');
-  nav.classList.toggle('nav-show');
-}
+document.querySelector('.nav-menu').onclick = () => document.querySelector('.nav').classList.toggle('nav-show');
 document.onclick = e => {
   let nav = document.querySelector('nav');
   if(e.target !== nav && !Array.from(nav.children).includes(e.target) && nav.classList.contains('nav-show')) nav.classList.toggle('nav-show');
