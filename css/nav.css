@@ -28,7 +28,7 @@
   padding: 0 15px;
   min-width: 45px;
   line-height: 45px;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 .nav .nav-item:first-of-type{
   background-color: var(--color-accent);
@@ -55,6 +55,9 @@
   width: 45px;
   height: 45px;
   font-size: .8125em;
+}
+.nav-menu:active{
+  color: hsl(0, 0%, 60%);
 }
 @media screen and (max-width: 640px){
   .header{
