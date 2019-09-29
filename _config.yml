@@ -1,0 +1,7 @@
+url: 'https://borland.ml'
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
