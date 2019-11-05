@@ -12,3 +12,7 @@ fields:
   config:
     required: false
   label: Layout
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
