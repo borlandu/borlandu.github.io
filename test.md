@@ -2,7 +2,6 @@
 tags: []
 title: test
 layout: default
-published: false
 
 ---
     {% assign udocuments = site.documents | where: "categories", "modules" %}
