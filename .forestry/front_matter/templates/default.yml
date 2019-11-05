@@ -2,13 +2,13 @@
 label: Default
 hide_body: false
 fields:
-- name: ah
-  type: textarea
-  default: ''
+- name: title
+  type: text
   config:
     required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: ah
-  description: oh
+  label: Title
+- name: layout
+  type: text
+  config:
+    required: false
+  label: Layout
