@@ -1,4 +1,14 @@
 ---
 label: Default
 hide_body: false
-fields: []
+fields:
+- name: ah
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: ah
+  description: oh
