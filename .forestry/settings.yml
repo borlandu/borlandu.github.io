@@ -4,12 +4,12 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
-  path: codelab/_arduino/modules
-  label: Collections
 - type: jekyll-pages
   label: Pages
   create: all
+- type: document
+  path: codelab/_arduino/modules
+  label: Collections
 - type: jekyll-posts
   label: Posts
   create: all
