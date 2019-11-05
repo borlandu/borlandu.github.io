@@ -5,12 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: codelab/_arduino/modules
+  path: _arduino
   label: Collections
-  create: documents
+  create: all
   match: "**/*"
-  templates:
-  - default
 - type: jekyll-pages
   label: Pages
   create: all
