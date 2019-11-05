@@ -2,5 +2,3 @@
 label: Default
 hide_body: false
 fields: []
-pages:
-- codelab/_arduino/modules/servo.md
