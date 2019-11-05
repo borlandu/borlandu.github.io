@@ -7,9 +7,6 @@ sections:
 - type: jekyll-pages
   label: Pages
   create: all
-- type: document
-  path: codelab/_arduino/modules
-  label: Collections
 - type: jekyll-posts
   label: Posts
   create: all
