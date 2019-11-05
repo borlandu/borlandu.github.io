@@ -1,5 +1,11 @@
 url: 'https://borland.ml'
 
+collections:
+  arduino:
+    output: true
+    permalink: "/codelab/:path/"
+
+
 plugins:
   - jekyll-sitemap
 
