@@ -17,4 +17,5 @@ fields:
   default: []
   label: Tags
 pages:
+- test.md
 - _arduino/modules/test-module.md
