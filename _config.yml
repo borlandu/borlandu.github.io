@@ -4,7 +4,7 @@ collections:
     arduino:
         output: true
         label: 'Arduino'
-        permalink: /codelab/:collection/:path/
+        permalink: /codelab/:collection/:path
 
 plugins:
   - jekyll-sitemap
