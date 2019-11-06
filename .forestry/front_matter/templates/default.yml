@@ -17,5 +17,5 @@ fields:
   default: []
   label: Categories
 pages:
-- test.md
 - _arduino/modules/test-module.md
+- test.md
