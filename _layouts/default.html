@@ -3,12 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/monokai.css' | relative_url }}" />
   </head>
   <body>
         
+<nav class="uk-hidden@m uk-navbar-container uk-navbar-transparent uk-background-secondary uk-light" uk-navbar uk-sticky="show-on-up: true;">
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-toggle" uk-toggle uk-navbar-toggle-icon href="#offcanvas"></a>
+    <a class="uk-navbar-item uk-logo" href="#">{{ site.title }}</a>
+  </div>
+</nav>
+<div id="offcanvas" class="uk-hidden@m" uk-offcanvas="overlay: true; mode: push">
+  <div class="uk-offcanvas-bar">
+    {% include sidebar.navigation.html %}
+  </div>
+</div>
     
 <div class="uk-grid-collapse" uk-grid uk-height-viewport="expand: true">
+  <div class="uk-width-medium uk-visible@m">
+    <div class="uk-tile uk-tile-secondary uk-width-medium uk-height-1-1 uk-position-fixed">
+      {% include sidebar.navigation.html %}
+    </div>
+  </div>
   <div class="uk-width-expand">
     <div class="uk-section uk-section-muted uk-height-1-1">
       <div class="uk-container uk-container-small">
