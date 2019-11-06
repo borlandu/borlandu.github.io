@@ -5,7 +5,7 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: directory
-  path: _arduino
+  path: _codelab
   label: Collections
   create: all
   match: "**/*"
