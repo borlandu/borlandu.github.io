@@ -1,42 +1,42 @@
 ---
-title: 'Servo'
-description: 'Сервопривод — это привод с управлением через отрицательную обратную связь, позволяющую точно управлять параметрами движения'
-categories: ['arduino', 'modules']
+title: Servo
+description: Сервопривод — это привод с управлением через отрицательную обратную связь,
+  позволяющую точно управлять параметрами движения
+categories:
+- arduino
+- modules
 layout: default
 nav:
   level_1:
-    - title: 'Подключение'
-      url: '#podklyuchenie'
-      level_2:
-        - title: 'subtitle'
-          url: '#h2'
-    - title: 'Использование'
-      url: '#ispolzovanie'
-    - title: 'Проекты'
-      url: '#proekty'
----
+  - title: Подключение
+    url: "#podklyuchenie"
+    level_2:
+    - title: subtitle
+      url: "#h2"
+  - title: Использование
+    url: "#ispolzovanie"
+  - title: Проекты
+    url: "#proekty"
 
+---
 # servo
 
-::: warning
-Это заготовка страницы
-:::
-
+{% include warning.html type="warning" content="Это заготовка страницы" %}
 
 Описать что может библиотека Servo.h - т.е. какие функции и т.д.
 
-
-
 ## Подключение {#podklyuchenie}
 
-| SERVO  | ARDUINO |
-| :----: | :-----: |
-| SIGNAL | D9~     |
-| VCC    | 5V      |
-| GND    | GND     |
+| SERVO | ARDUINO |
+| :---: | :---: |
+| SIGNAL | D9\~ |
+| VCC | 5V |
+| GND | GND |
 
 [![Схема подключения сервопривода к arduino](https://orpi.borland.ml/codelab/images/e8291e7e-87ed-4001-8254-39d8eb7048cf.png "Схема подключения сервопривода к arduino")](https://orpi.borland.ml/codelab/images/e8291e7e-87ed-4001-8254-39d8eb7048cf.png)
+
 ## Использование {#ispolzovanie}
+
 Пример поворачивает серву на 90градусов
 
 ```c
