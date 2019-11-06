@@ -1,10 +1,10 @@
 url: 'https://borland.ml'
 
 collections:
-    arduino:
+    codelab:
         output: true
-        label: 'Arduino'
-        permalink: /codelab/:collection/:path
+        label: 'Codelab'
+        # permalink: /codelab/:collection/:path
 
 plugins:
   - jekyll-sitemap
