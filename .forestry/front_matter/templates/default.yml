@@ -16,5 +16,46 @@ fields:
   type: tag_list
   default: []
   label: Categories
+- name: nav
+  type: field_group
+  config: {}
+  fields:
+  - name: level_1
+    type: field_group_list
+    fields:
+    - name: title
+      type: text
+      config:
+        required: false
+      label: Title
+    - name: url
+      type: text
+      config:
+        required: false
+      label: Url
+    - name: level_2
+      type: field_group_list
+      fields:
+      - name: title
+        type: text
+        config:
+          required: false
+        label: Title
+      - name: url
+        type: text
+        config:
+          required: false
+        label: Url
+      config:
+        min: 
+        max: 
+        labelField: 
+      label: Level 2
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: Level
+  label: Nav
 pages:
 - test.md
