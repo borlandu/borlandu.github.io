@@ -5,6 +5,15 @@ layout: default
 categories:
 - arduino
 - modules
+nav:
+  level_1:
+  - title: Az
+    url: "#az"
+  - title: Lol
+    url: "#lol"
+    level_2:
+    - title: Hmm
+      url: "#hmm"
 
 ---
 # Test
