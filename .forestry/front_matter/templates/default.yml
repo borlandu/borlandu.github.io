@@ -12,10 +12,10 @@ fields:
   config:
     required: false
   label: Layout
-- name: tags
+- name: categories
   type: tag_list
   default: []
-  label: Tags
+  label: Categories
 pages:
 - test.md
 - _arduino/modules/test-module.md
