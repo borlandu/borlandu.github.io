@@ -16,8 +16,7 @@ nav:
       url: "#hmm"
 
 ---
-
-{% include warning.html content="Test" %}
+{% include warning.html type="primary" content="Test" %}
 
 # Test
 
