@@ -30,18 +30,19 @@ DIn - D9
 
 Библиотека FastLED
 
+```c++
     #include <FastLED.h>
-    
+
     const uint8_t LED = 8;
     const uint8_t NUM_LEDS = 30;
-    
+
     CRGB leds[NUM_LEDS];
-    
+
     void setup() {
       Serial.begin(9600);
       FastLED.addLeds<WS2812B, LED, GRB>(leds, NUM_LEDS);
     }
-    
+
     void loop() {
       for(int8_t i = 0; i < NUM_LEDS; i++){
         leds[i] = CRGB(0, 0, 255);
@@ -54,5 +55,6 @@ DIn - D9
         delay(50);
       }
     }
+```
 
 ## Проекты {#proekty}
