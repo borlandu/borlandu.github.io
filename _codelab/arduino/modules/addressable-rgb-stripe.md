@@ -5,7 +5,16 @@ categories:
 title: Addressable RGB stripe
 layout: default
 nav:
-  level_1: []
+  level_1:
+  - title: Подключение
+    url: "#podklyuchenie"
+    level_2: []
+  - title: Использование
+    url: "#ispolzovanie"
+    level_2: []
+  - title: Проекты
+    url: "#proekty"
+    level_2: []
 
 ---
 # Адресная RGB лента
