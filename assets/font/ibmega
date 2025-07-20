@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'ega';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://borlandu.github.io/assets/font/Web437_IBM_EGA_8x14.woff)
+}
